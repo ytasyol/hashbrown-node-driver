@@ -10,16 +10,6 @@ $ npm install hashbrown-driver
 const HashBrown = require('hashbrown-driver');
 ```
 
-As a GIT submodule:
-```
-$ git submodule add https://github.com/Putaitu/hashbrown-cms.git hashbrown-driver
-$ cd hashbrown-driver
-$ git checkout node-driver
-```
-```javascript
-const HashBrown = require('./hashbrown-driver')
-```
-
 # API
 The helper classes are accessed thusly:
 
