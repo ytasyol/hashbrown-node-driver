@@ -167,7 +167,76 @@ Submits an entry
 | id | <code>String</code> | 
 | query | <code>Object</code> | 
 
+<a name="MediaHelper"></a>
 
+## MediaHelper
+A helper class for fetching content
+
+**Kind**: global class  
+
+* [MediaHelper](#MediaHelper)
+    * [.getAll()](#MediaHelper.getAll) ⇒ <code>Promise</code>
+    * [.getById(id)](#MediaHelper.getById) ⇒ <code>Promise</code>
+    * [.getCachedById(id)](#MediaHelper.getCachedById) ⇒ <code>Media</code>
+    * [.setById(id, filename, base64)](#MediaHelper.setById) ⇒ <code>Promise</code>
+    * [.deleteById(id)](#MediaHelper.deleteById) ⇒ <code>Promise</code>
+
+<a name="MediaHelper.getAll"></a>
+
+### MediaHelper.getAll() ⇒ <code>Promise</code>
+Gets all media objects
+
+**Kind**: static method of [<code>MediaHelper</code>](#MediaHelper)  
+**Returns**: <code>Promise</code> - Media  
+<a name="MediaHelper.getById"></a>
+
+### MediaHelper.getById(id) ⇒ <code>Promise</code>
+Gets a media object by id
+
+**Kind**: static method of [<code>MediaHelper</code>](#MediaHelper)  
+**Returns**: <code>Promise</code> - Media  
+
+| Param | Type |
+| --- | --- |
+| id | <code>String</code> | 
+
+<a name="MediaHelper.getCachedById"></a>
+
+### MediaHelper.getCachedById(id) ⇒ <code>Media</code>
+Gets a media object by id (cached)
+
+**Kind**: static method of [<code>MediaHelper</code>](#MediaHelper)  
+**Returns**: <code>Media</code> - The Media object  
+
+| Param | Type |
+| --- | --- |
+| id | <code>String</code> | 
+
+<a name="MediaHelper.setById"></a>
+
+### MediaHelper.setById(id, filename, base64) ⇒ <code>Promise</code>
+Sets a Media object by id
+
+**Kind**: static method of [<code>MediaHelper</code>](#MediaHelper)  
+**Returns**: <code>Promise</code> - Result  
+
+| Param | Type |
+| --- | --- |
+| id | <code>String</code> | 
+| filename | <code>String</code> | 
+| base64 | <code>String</code> | 
+
+<a name="MediaHelper.deleteById"></a>
+
+### MediaHelper.deleteById(id) ⇒ <code>Promise</code>
+Deletes a Media object by id
+
+**Kind**: static method of [<code>MediaHelper</code>](#MediaHelper)  
+**Returns**: <code>Promise</code> - Result  
+
+| Param | Type |
+| --- | --- |
+| id | <code>String</code> | 
 
 <a name="TemplateHelper"></a>
 
@@ -204,4 +273,3 @@ Gets all template objects
 | Param | Type |
 | --- | --- |
 | type | <code>String</code> | 
-
