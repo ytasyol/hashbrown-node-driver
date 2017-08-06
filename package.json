@@ -1,14 +1,17 @@
 {
-    "author": {
-        "name": "Putaitu Productions"
-    },
-    "bundleDependencies": false,
-    "deprecated": false,
-    "description": "The node.js driver for HashBrown CMS",
-    "devDependencies": {},
-    "directories": {},
-    "license": "MIT",
-    "main": "index.js",
-    "name": "hashbrown-driver",
-    "version": "0.2.18"
+  "name": "tmp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "hashbrown-driver": "^0.2.18"
+  }
 }

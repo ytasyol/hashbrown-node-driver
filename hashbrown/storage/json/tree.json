@@ -1,0 +1,24 @@
+{
+    "631f5a7422e72dfcd617cfc04b8dba86a21c57a0": {
+        "properties": {
+            "en": {
+                "title": "Home",
+                "description": "This is my home",
+                "url": "/",
+                "template": "sectionPage",
+                "sections": [
+                    {
+                        "template": "section",
+                        "text": "<p>This is my page</p>\n\n<img alt=\"screenshot.png\" src=\"http://localhost:8000/media/c1d9a960102400d3dda6c0f1b0dd585dfbd63bd7/screenshot.png\">",
+                        "image": "c1d9a960102400d3dda6c0f1b0dd585dfbd63bd7"
+                    }
+                ]
+            }
+        },
+        "parentId": "",
+        "createDate": "2017-08-06T10:35:16.127Z",
+        "updateDate": "2017-08-06T11:56:29.294Z",
+        "createdBy": "e4b040257f957dfe31a116d941f77558fb402fbf",
+        "updatedBy": "e4b040257f957dfe31a116d941f77558fb402fbf"
+    }
+}
