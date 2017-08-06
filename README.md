@@ -102,9 +102,9 @@ $ node index.js
 ## Publish the Content
 As you can configure multiple Connections, you need to specify which one your Content nodes will be using.
 - Right click your Content node in the "Content" pane and pick "Settings > Publishing"
-- Select the Connection you created and slick "OK"  
+- Select the Connection you created and click "OK"  
 ![Selecting a publishing connection](_readme/select-connection.png)
-- Note that the Content editor now has an "& publish" dropdown next to the "Save" button
+- Note that the Content editor now has a "& publish" dropdown next to the "Save" button
 - Click "Save & publish"
 - Click "View"
 
