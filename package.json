@@ -1,0 +1,14 @@
+{
+    "author": {
+        "name": "Putaitu Productions"
+    },
+    "bundleDependencies": false,
+    "deprecated": false,
+    "description": "The node.js driver for HashBrown CMS",
+    "devDependencies": {},
+    "directories": {},
+    "license": "MIT",
+    "main": "index.js",
+    "name": "hashbrown-driver",
+    "version": "0.2.16"
+}
