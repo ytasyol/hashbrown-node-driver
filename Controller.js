@@ -175,7 +175,7 @@ class Controller {
      * Gets a Template by id
      */
     static getTemplateById(req, res) {
-        HashBrown.templates.get(req.params.type, req.params.id)
+        HashBrown.templates.getById(req.params.type, req.params.id)
         .then((template) => {
             res.status(200).send(template);
         })

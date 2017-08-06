@@ -1,14 +1,42 @@
 {
-    "author": {
-        "name": "Putaitu Productions"
-    },
-    "bundleDependencies": false,
-    "deprecated": false,
-    "description": "The node.js driver for HashBrown CMS",
-    "devDependencies": {},
-    "directories": {},
-    "license": "MIT",
-    "main": "index.js",
+  "_args": [
+    [
+      "hashbrown-driver@0.2.18",
+      "/home/mrzapp/Downloads/TMP/my-website"
+    ]
+  ],
+  "_from": "hashbrown-driver@0.2.18",
+  "_id": "hashbrown-driver@0.2.18",
+  "_inBundle": false,
+  "_integrity": "sha512-h1SHUplwVqH53wpsoKlhf/g+vqiEAOBO5Yfp+Qt353b9Z3evod72+SHRPIUtpBRbQEVH3Hk5+bI6F8ouIlO21A==",
+  "_location": "/hashbrown-driver",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "hashbrown-driver@0.2.18",
     "name": "hashbrown-driver",
-    "version": "0.2.18"
+    "escapedName": "hashbrown-driver",
+    "rawSpec": "0.2.18",
+    "saveSpec": null,
+    "fetchSpec": "0.2.18"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/hashbrown-driver/-/hashbrown-driver-0.2.18.tgz",
+  "_spec": "0.2.18",
+  "_where": "/home/mrzapp/Downloads/TMP/my-website",
+  "author": {
+    "name": "Putaitu Productions"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "The node.js driver for HashBrown CMS",
+  "devDependencies": {},
+  "directories": {},
+  "license": "MIT",
+  "main": "index.js",
+  "name": "hashbrown-driver",
+  "version": "0.2.18"
 }

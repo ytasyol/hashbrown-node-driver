@@ -39,6 +39,55 @@ class TemplateHelper {
             });
         });
     }
+    
+    /** 
+     * Gets a Template by id
+     *
+     * @param {String} type
+     * @param {String} id
+     *
+     * @returns {Promise} Template
+     */
+    static getById(type, id) {
+        let relPath = HashBrown.getConfig().paths[type + 'Templates'];
+
+        if(!relPath) {
+            return Promise.reject(new Error('No path configured for "' + type + '" templates'));
+        }
+
+        let absPath = HashBrown.getRootPath(relPath);
+
+        return new Promise((resolve, reject) => {
+            fs.readdir(absPath, (err, files) => {
+                if(err) {
+                    return reject(new Error('Template by id "' + id + '" not found'));
+                }
+
+                for(let file of files) {
+                    let name = path.basename(file);
+                    let ext = path.extname(file);
+                    let thisId = name.replace(ext, '');
+
+                    if(thisId !== id) { continue; }
+
+                    return fs.readFile(absPath + '/' + file, 'utf8', (err, content) => {
+                        if(err) {
+                            return reject(new Error('Template by id "' + id + '" not found'));
+                        }
+
+                        resolve({
+                            name: name,
+                            id: id,
+                            type: type,
+                            markup: content
+                        });
+                    });
+                }
+
+                return reject(new Error('Template by id "' + id + '" not found'));
+            });
+        });
+    }
 
     /**
      * Gets all template objects

@@ -1,0 +1,4 @@
+hashbrown/*
+node_modules/*
+*.swo
+*.swp
