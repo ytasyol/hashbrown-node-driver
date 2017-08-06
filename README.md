@@ -1,7 +1,8 @@
 ## Prerequisites
 For this example, we'll be using express and the [HashBrown node.js driver](https://github.com/Putaitu/hashbrown-node-driver)
 We need the `body-parser` package to allow pushing content changes, as they are consumed via a REST API.  
-In this example, we're using `ejs` for templating, but that's up to you.
+In this example, we're using EJS for templating, but that's up to you. 
+A major advantage of EJS is that it supports dynamic includes, which we'll be using.
 
 Make sure you have the latest stable version of HashBrown, and that it's running
 
