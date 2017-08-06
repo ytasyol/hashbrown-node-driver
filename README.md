@@ -88,7 +88,7 @@ $ node index.js
 ## Create the Content
 - In the "Content" pane, create a new Content node  
 ![Creating a Content node](_readme/create-content.png)
-- Pick the "section Page" Schema and click "OK"
+- Pick the "Section Page" Schema and click "OK"
 - Give it a name, like "Home"
 
 ## Create the sections
