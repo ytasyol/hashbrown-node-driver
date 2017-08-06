@@ -12,7 +12,7 @@ $ node index.js
 ```
 
 ## Create the project
-- Create a new project in the dashboard and call it "node.js example"
+- Create a new project in the dashboard and call it "node.js example"  
 ![Creating a project](_readme/create-project.png)
 
 ## Create the Connection
@@ -26,7 +26,7 @@ $ node index.js
 
 ## Create the Schemas
 ### Section Schema
-- In the "Schemas" pane, right click and create a new child Schema under the "Struct" type
+- In the "Schemas" pane, right click and create a new child Schema under the "Struct" type  
 ![Creating a section Schema](_readme/create-section-schema.png)
 - Type "Section" into the name field
 - Pick a fancy icon
@@ -53,10 +53,11 @@ $ node index.js
         }
     }
 }
+```
 - Click "save"
 
 ### Section Page Schema
-- Create a new Schema as a child of the "Page" Schema and name it "Section Page"
+- Create a new Schema as a child of the "Page" Schema and name it "Section Page"  
 ![Creating a section page Schema](_readme/create-section-page-schema.png)
 - Use these fields:
 ```json
@@ -84,23 +85,23 @@ $ node index.js
 - Click "save"
 
 ## Create the Content
-- In the "Content" pane, create a new Content node
+- In the "Content" pane, create a new Content node  
 ![Creating a Content node](_readme/create-content.png)
 - Pick the "section Page" Schema and click "OK"
 - Give it a name, like "Home"
 
 ## Create the sections
-- In the Content editor, add a new section with the "+" button
+- In the Content editor, add a new section with the "+" button  
 ![Adding a section](_readme/add-section.png)
 - Type some text into the text editor (note that you can use WYSIWYG, markdown and HTML)
-- Click the image field to upload an image
+- Click the image field to upload an image  
 ![Adding an image](_readme/add-image.png)
 - Click "save"
 
 ## Publish the Content
 As you can configure multiple Connections, you need to specify which one your Content nodes will be using.
 - Right click your Content node in the "Content" pane and pick "Settings > Publishing"
-- Select the Connection you created and slick "OK"
+- Select the Connection you created and slick "OK"  
 ![Selecting a publishing connection](_readme/select-connection.png)
 - Note that the Content editor now has an "& publish" dropdown next to the "Save" button
 - Click "Save & publish"
