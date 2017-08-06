@@ -4,7 +4,7 @@ let fs = require('fs');
 let path = require('path');
 
 /**
- * A helper class for fetching content
+ * A helper class for fetching templates
  */
 class TemplateHelper {
     /** 

@@ -170,7 +170,7 @@ Submits an entry
 <a name="MediaHelper"></a>
 
 ## MediaHelper
-A helper class for fetching content
+A helper class for fetching media
 
 **Kind**: global class  
 
@@ -225,10 +225,11 @@ Deletes a Media object by id
 | --- | --- |
 | id | <code>String</code> | 
 
+
 <a name="TemplateHelper"></a>
 
 ## TemplateHelper
-A helper class for fetching content
+A helper class for fetching templates
 
 **Kind**: global class  
 
