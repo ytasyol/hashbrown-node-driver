@@ -1,10 +1,14 @@
 'use strict';
 
-let fs = require('fs');
-let path = require('path');
+const fs = require('fs');
+const path = require('path');
+
+const CACHE_TIMEOUT = 1000;
+
+let cache = {};
 
 /**
- * A helper class for fetching media
+ * A helper class for fetching content
  */
 class MediaHelper {
     /**
@@ -90,18 +94,60 @@ class MediaHelper {
         
             fs.readdir(path + '/' + id, 'utf8', (err, files) => {
                 if(err) {
-                    reject(err);
+                    return reject(err);
                     return;
                 }
 
                 if(files.length < 1) {
-                    reject(new Error('Media folder "' + id + '" is empty'));
-                    return;
+                    return reject(new Error('Media folder "' + id + '" is empty'));
                 }
 
                 resolve(files[0]);
             });
         });
+    }	
+    
+    /**
+     * Gets a media object by id (cached)
+     *
+     * @param {String} id
+     *
+     * @returns {Media} The Media object
+     */
+    static getCachedById(id) {
+        // If the id was null, we just fail silently
+        if(!id) { return null; }
+
+        // Check cache
+        if(cache[id]) {
+            if(Date.now() - cache[id].time > CACHE_TIMEOUT) {
+                delete cache[id];
+            } else {
+                return cache[id];
+            }
+        }
+
+        // If cache was expired, fetch new content
+        let filePath = HashBrown.getPath('storage/media') + '/' + id;
+        let files = fs.readdirSync(filePath, 'utf8') || [];
+
+        if(files.length < 1) {
+            throw new Error('Media by id "' + id + '" could not be found');
+        }
+
+        // Add new Media to cache
+        let media = {
+            id: id,
+            filename: path.basename(files[0]),
+            extension: path.extname(files[0])
+        };
+
+        media.name = media.filename.replace(media.extension, '');
+        media.url = '/media/' + id + '/' + media.filename;
+
+        cache[id] = media;
+    
+        return cache[id];
     }	
     
     /**
@@ -130,6 +176,8 @@ class MediaHelper {
                     reject(err);
                     return;  
                 }
+
+                delete cache[id];
 
                 resolve('OK');
             });

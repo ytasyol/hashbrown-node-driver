@@ -33,12 +33,8 @@ class Controller {
         // Forms post
         app.post('/hashbrown/forms/:id', this.authorize, this.postForm);
         
-        // Serve assets
-        app.get('/hashbrown/content/*', this.serveContent);
-        app.get('/hashbrown/media/:id', this.serveMedia);
-        
-        // Template serve
-//        app.get('/hashbrown/template/:type/:id', this.authorize, this.serveTemplateById);
+        // Serve media
+        app.get('/media/:id', this.serveMedia);
     }
 
     /**
@@ -231,13 +227,13 @@ class Controller {
      * Serve a Media object by id
      */
     static serveMedia(req, res) {
-        HashBrown.media.getById(req.params.id)
-        .then((media) => {
-            res.status(200).sendFile(HashBrown.getPath('storage/media') + '/' + req.params.id + '/' + media);
-        })
-        .catch((e) => {
-            res.status(404).send(e.message);
-        });
+        let media = HashBrown.media.getCachedById(req.params.id);
+
+        if(!media) {
+            return res.status(404).send('Not found');
+        }
+
+        res.status(200).sendFile(HashBrown.getPath('storage/media') + '/' + media.id + '/' + media.filename);
     }
     
     /**
