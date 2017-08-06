@@ -38,5 +38,5 @@
   "license": "MIT",
   "main": "index.js",
   "name": "hashbrown-driver",
-  "version": "0.2.18"
+  "version": "0.3.0"
 }
