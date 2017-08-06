@@ -1,14 +1,16 @@
 # Node.js driver for HashBrown CMS
 A tool for easily accessing your HashBrown CMS content data on your site
 
-# Usage
-Via NPM:  
+# Usage 
 ```
 $ npm install hashbrown-driver
 ```
 ```javascript
 const HashBrown = require('hashbrown-driver');
 ```
+
+# Example project
+Check out the [example project](https://github.com/Putaitu/hashbrown-node-driver/tree/example)
 
 # API
 The helper classes are accessed thusly:
