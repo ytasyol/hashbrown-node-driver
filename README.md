@@ -6,8 +6,10 @@ A major advantage of EJS is that it supports dynamic includes, which we'll be us
 
 Make sure you have the latest stable version of HashBrown, and that it's running
 
-When you've cloned this repo, install the dependencies and start the server:
+Clone this repo, install the dependencies and start the server:
 ```bash
+$ git clone https://github.com/Putaitu/hashbrown-node-driver.git -b example --single-branch my-website
+$ cd my-website
 $ npm install
 $ node index.js
 ```
