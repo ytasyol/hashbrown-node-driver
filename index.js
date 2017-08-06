@@ -11,12 +11,14 @@ const APP_ROOT = Path.resolve(__dirname);
 // Express
 let app = Express();
 
+// Configure body parser
+app.use(BodyParser.json({limit: '50mb'}));
+app.use(BodyParser.urlencoded({extended: true}));
+
 // Init HashBrown driver
 HashBrown.init(app);
 
 // Configure express
-app.use(BodyParser.json({limit: '50mb'}));
-app.use(BodyParser.urlencoded({extended: true}));
 app.use(Express.static(APP_ROOT + '/public'));
 app.use('/media', Express.static(APP_ROOT + '/hashbrown/storage/media'));
 app.engine('html', require('ejs').renderFile);
