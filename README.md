@@ -2,7 +2,6 @@
 A tool for easily accessing your HashBrown CMS content data on your site
 
 # Usage
-Via NPM:  
 ```
 $ npm install hashbrown-driver
 ```
@@ -10,15 +9,8 @@ $ npm install hashbrown-driver
 const HashBrown = require('hashbrown-driver');
 ```
 
-As a GIT submodule:
-```
-$ git submodule add https://github.com/Putaitu/hashbrown-cms.git hashbrown-driver
-$ cd hashbrown-driver
-$ git checkout node-driver
-```
-```javascript
-const HashBrown = require('./hashbrown-driver')
-```
+# Example project
+The offical example project is [here](https://github.com/Putaitu/hashbrown-node-driver/tree/example)
 
 # API
 The helper classes are accessed thusly:
