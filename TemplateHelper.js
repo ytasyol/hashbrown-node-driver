@@ -70,7 +70,7 @@ class TemplateHelper {
 
                     if(thisId !== id) { continue; }
 
-                    return fs.readFile(absPath + '/' + file, 'utf8', (err, content) => {
+                    return fs.readFile(path.join(absPath, file), 'utf8', (err, content) => {
                         if(err) {
                             return reject(new Error('Template by id "' + id + '" not found'));
                         }

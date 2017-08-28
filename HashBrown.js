@@ -34,7 +34,7 @@ class HashBrown {
      * @return {String} path
      */
     static getPath(folder = '') {
-        return path.dirname(require.main.filename) + '/hashbrown/' + folder;
+        return path.join(path.dirname(require.main.filename), 'hashbrown', folder);
     }
     
     /**
@@ -45,7 +45,7 @@ class HashBrown {
      * @return {String} path
      */
     static getRootPath(folder = '') {
-        return path.dirname(require.main.filename) + '/' + folder;
+        return path.join(path.dirname(require.main.filename), folder);
     }
 
     /**
@@ -93,18 +93,19 @@ class HashBrown {
      */
     static ensureLocations() {
         // JSON
-        let jsonPath = this.getPath('storage/json');
-        
-        if(!fs.existsSync(jsonPath + '/tree.json')) {
+        let jsonPath = this.getPath(path.join('storage', 'json'));
+        let treePath = path.join(jsonPath, 'tree.json')
+
+        if(!fs.existsSync(treePath)) {
             if(!fs.existsSync(jsonPath)) {
                 this.mkdirRecursively(jsonPath);
             }
             
-            fs.writeFileSync(jsonPath + '/tree.json', '{}');
+            fs.writeFileSync(treePath, '{}');
         }
         
         // Media
-        let mediaPath = this.getPath('storage/media');
+        let mediaPath = this.getPath(path.join('storage', 'media'));
 
         if(!fs.existsSync(mediaPath)) {
             this.mkdirRecursively(mediaPath);
@@ -125,7 +126,7 @@ class HashBrown {
         if(!fs.existsSync(dirPath)) { return; }
 
         fs.readdirSync(dirPath).forEach((file,index) => {
-            var filePath = dirPath + "/" + file;
+            var filePath = path.join(dirPath, file);
             
             // Recurse if file is directory
             if(fs.lstatSync(filePath).isDirectory()) {
@@ -147,8 +148,8 @@ class HashBrown {
      * @param {String} dirPath
      */
     static mkdirRecursively(dirPath) {
-        let parents = dirPath.split('/');
-        let finalPath = '/';
+        let parents = dirPath.split(path.sep);
+        let finalPath = '';
 
         for(let i in parents) {
             finalPath += parents[i];
@@ -158,7 +159,7 @@ class HashBrown {
             }
 
             if(i < parents.length - 1) {
-                finalPath += '/';
+                finalPath += path.sep;
             }
         }
     }

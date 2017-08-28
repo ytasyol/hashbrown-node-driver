@@ -23,7 +23,7 @@ class ContentHelper {
 
         if(updateCache || !cache) {
             return new Promise((resolve, reject) => {
-                fs.readFile(jsonPath + '/tree.json', 'utf8', (err, data) => {
+                fs.readFile(path.join(jsonPath, 'tree.json'), 'utf8', (err, data) => {
                     if(err) {
                         reject(new Error(err));
                     
@@ -53,7 +53,7 @@ class ContentHelper {
     static setTree(json) {
         HashBrown.ensureLocations();
 
-        let jsonPath = HashBrown.getPath('storage/json');
+        let jsonPath = HashBrown.getPath(path.join('storage', 'json'));
  
         return new Promise((resolve, reject) => {
             if(typeof json === 'object') {
@@ -70,7 +70,7 @@ class ContentHelper {
 
             console.log('[HashBrown] Writing content tree to ' + jsonPath + '...');
             
-            fs.writeFile(jsonPath + '/tree.json', json, 'utf8', (err, data) => {
+            fs.writeFile(path.join(jsonPath, 'tree.json'), json, 'utf8', (err, data) => {
                 if(err) {
                     console.log('[HashBrown] Failed writing content tree: ' + err);
                     return reject(new Error(err));

@@ -47,7 +47,7 @@ class MediaHelper {
                 }
 
                 return new Promise((resolve, reject) => {
-                    fs.readdir(mediaPath + '/' + next, 'utf8', (err, files) => {
+                    fs.readdir(path.join(mediaPath, next), 'utf8', (err, files) => {
                         if(err) {
                             reject(err);
                             return;
@@ -90,9 +90,9 @@ class MediaHelper {
      */
     static getById(id) {
         return new Promise((resolve, reject) => {
-            let path = HashBrown.getPath('storage/media');
+            let filePath = path.join(HashBrown.getPath('storage/media'), id);
         
-            fs.readdir(path + '/' + id, 'utf8', (err, files) => {
+            fs.readdir(filePath, 'utf8', (err, files) => {
                 if(err) {
                     return reject(err);
                     return;
@@ -128,7 +128,7 @@ class MediaHelper {
         }
 
         // If cache was expired, fetch new content
-        let filePath = HashBrown.getPath('storage/media') + '/' + id;
+        let filePath = path.join(HashBrown.getPath('storage/media'), id);
         let files = fs.readdirSync(filePath, 'utf8') || [];
 
         if(files.length < 1) {
@@ -165,7 +165,7 @@ class MediaHelper {
         let buffer = Buffer.from(base64, 'base64');
 
         return new Promise((resolve, reject) => {
-            let folderPath = HashBrown.getPath('storage/media') + '/' + id;
+            let folderPath = path.join(HashBrown.getPath('storage/media'), id);
 
             if(!fs.existsSync(folderPath)) {
                 HashBrown.mkdirRecursively(folderPath);
@@ -192,7 +192,7 @@ class MediaHelper {
      * @returns {Promise} Result
      */
     static deleteById(id) {
-        let folderPath = HashBrown.getPath('storage/media') + '/' + id;
+        let folderPath = path.join(HashBrown.getPath('storage/media'), id);
 
         console.log('[HashBrown] Deleting media "' + id + '"...');
 
